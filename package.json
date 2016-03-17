@@ -1,0 +1,30 @@
+{
+  "name": "camabis",
+  "version": "1.0.0",
+  "description": "Cannabis disease identification system.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/liujuliet/camabis.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/liujuliet/camabis/issues"
+  },
+  "homepage": "https://github.com/liujuliet/camabis",
+  "dependencies": {
+    "angular": "^1.5.1",
+    "angularfire": "^1.1.4",
+    "firebase": "^2.4.1",
+    "gulp": "^3.9.1",
+    "gulp-connect": "^2.2.0",
+    "gulp-watch": "^4.3.5"
+  },
+  "devDependencies": {
+    "gulp-connect": "^2.3.1"
+  }
+}
