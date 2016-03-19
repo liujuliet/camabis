@@ -20,6 +20,7 @@
     "angular": "^1.5.1",
     "angularfire": "^1.1.4",
     "firebase": "^2.4.1",
+    "firebase-tools": "^2.2.1",
     "gulp": "^3.9.1",
     "gulp-connect": "^2.2.0",
     "gulp-watch": "^4.3.5"

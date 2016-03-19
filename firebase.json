@@ -1,0 +1,9 @@
+{
+  "firebase": "camabis",
+  "public": "src",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}
