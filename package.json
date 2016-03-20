@@ -26,6 +26,10 @@
     "gulp-watch": "^4.3.5"
   },
   "devDependencies": {
-    "gulp-connect": "^2.3.1"
+    "del": "^2.2.0",
+    "gulp-connect": "^2.3.1",
+    "gulp-less": "^3.0.5",
+    "gulp-uglify": "^1.5.3",
+    "run-sequence": "^1.1.5"
   }
 }
