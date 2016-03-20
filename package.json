@@ -27,8 +27,11 @@
   },
   "devDependencies": {
     "del": "^2.2.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-concat-css": "^2.2.0",
     "gulp-connect": "^2.3.1",
     "gulp-less": "^3.0.5",
+    "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^1.5.3"
   }
 }

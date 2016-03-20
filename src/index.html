@@ -5,11 +5,23 @@
 <head>
     <meta charset="utf-8">
 
-    <title>Page Title</title>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
-    <script type="text/javascript" src="javascript/the.js"></script>
+    <title>Camabis</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/styles.css">
+
+    <!-- Libraries -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
+    <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.4.0/firebase.js"></script>
+    <script type="text/javascript" src="https://cdn.firebase.com/libs/angularfire/1.1.4/angularfire.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-route.js"></script>
+
+    <!-- Custom Scripts -->
+    <script type="text/javascript" src="app.js"></script>
 </head>
-<body>
-    <h1>Camabis</h1>
+<body ng-app="app">
+    <div class="container">
+        <div class="ng-view"></div>
+    </div>
 </body>
 </html>

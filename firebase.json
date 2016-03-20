@@ -1,6 +1,6 @@
 {
   "firebase": "camabis",
-  "public": "src",
+  "public": "dist",
   "ignore": [
     "firebase.json",
     "**/.*",
