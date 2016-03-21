@@ -1,0 +1,33 @@
+@import "./../styles/variables.less";
+
+.header {
+    border-bottom: @border;
+    color: @color1;
+    padding: 1rem 0;
+    text-align: center;
+    width: 100%;
+}
+
+.nav {
+    border-right: @border;
+    height: 100%;
+    max-width: 200px;
+    min-width: 110px;
+    width: 25%;
+
+    * {
+        width: 100%;
+    }
+
+    a {
+        box-sizing: border-box;
+        padding: 1em 1.5em;
+        display: inline-block;
+        text-decoration: none;
+    }
+
+    a.active, a.active:hover {
+        color: @textColor3;
+        background-color: @color2;
+    }
+}
