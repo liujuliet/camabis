@@ -3,7 +3,8 @@
 
     angular.module('app', [
         'firebase',
-        'ngRoute'
+        'ngRoute',
+        'myApp.config'
     ])
 
 })();

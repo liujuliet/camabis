@@ -2,10 +2,19 @@
     <h1>camabis</h1>
 </div>
 
-<div class="nav">
-    <ul>
-        <li><a class="active" href="">Active</a></li>
-        <li><a href="">Resolved</a></li>
-        <li><a href="">Non-Issues</a></li>
-    </ul>
+<div class="content">
+    <div class="nav">
+        <ul>
+            <li><a class="active" href="">Active</a></li>
+            <li><a href="">Resolved</a></li>
+            <li><a href="">Non-Issues</a></li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <div ng-repeat="concern in concernContainer">
+            <p>{{concern.date}}</p>
+            <p>{{concern.status}}</p>
+        </div>
+    </div>
 </div>
