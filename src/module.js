@@ -3,8 +3,10 @@
 
     angular.module('app', [
         'firebase',
+        'myApp.config',
+        'ngAnimate',
         'ngRoute',
-        'myApp.config'
+        'vAccordion'
     ])
 
 })();

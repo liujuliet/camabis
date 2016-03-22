@@ -2,7 +2,7 @@
     <h1>camabis</h1>
 </div>
 
-<div class="content">
+<div class="main">
     <div class="nav">
         <ul>
             <li><a class="active" href="">Active</a></li>
@@ -11,10 +11,14 @@
         </ul>
     </div>
 
-    <div class="container">
-        <div ng-repeat="concern in concernContainer">
-            <p>{{concern.date}}</p>
-            <p>{{concern.status}}</p>
-        </div>
-    </div>
+    <v-accordion class="vAccordion--default content container">
+        <v-pane ng-repeat="concern in concernContainer">
+            <v-pane-header>
+                <p>{{concern.date}}</p>
+            </v-pane-header>
+            <v-pane-content>
+                <p>{{concern.status}}</p>
+            </v-pane-content>
+        </v-pane>
+    </v-accordion>
 </div>

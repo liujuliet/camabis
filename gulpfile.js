@@ -8,10 +8,11 @@ var gulp = require ('gulp'),
     uglify = require('gulp-uglify');
 
 var paths = {
+    css: 'src/**/*.css',
     dist: 'dist',
     html: 'src/**/*.html',
-    js: 'src/**/*.js',
-    jsRoot: 'src/**/module.js',
+    js: ['src/**/*.js', '!src/**/*.min.js'],
+    lib: 'src/**/*.min.js',
     less: 'src/**/*.less'
 }
 
@@ -27,6 +28,16 @@ gulp.task('connect', function() {
     });
 });
 
+gulp.task('copy:css', function() {
+    gulp.src(paths.css)
+        .pipe(gulp.dest(paths.dist));
+});
+
+gulp.task('copy:js', function() {
+    gulp.src(paths.lib)
+        .pipe(gulp.dest(paths.dist));
+});
+
 gulp.task('html', function () {
     gulp.src(paths.html)
         .pipe(gulp.dest(paths.dist))
@@ -34,7 +45,7 @@ gulp.task('html', function () {
 });
 
 gulp.task('scripts', function() {
-    gulp.src([paths.jsRoot, paths.js])
+    gulp.src(paths.js)
         .pipe(sourcemaps.init())
         .pipe(concat('app.js'))
         .pipe(uglify())
@@ -57,6 +68,6 @@ gulp.task('watch', function() {
     gulp.watch(paths.js, ['scripts']);
 });
 
-gulp.task('build', ['clean', 'html', 'styles', 'scripts']);
+gulp.task('build', ['clean', 'copy:css', 'copy:js', 'html', 'styles', 'scripts']);
 gulp.task('dev', ['build', 'connect', 'watch'])
 gulp.task('default', ['dev']);
