@@ -1,10 +1,12 @@
 <div class="header">
+    <a href="" class="nav-toggle" ng-click="toggleNav()"><i class="fa fa-bars"></i></a>
     <h1>camabis</h1>
+    <div class="placeholder"></div>
 </div>
 
 <div class="main">
-    <div class="nav">
-        <ul>
+    <div class="nav" ng-show="showNav">
+        <ul class="nowrap">
             <li><a class="active" href="">Active</a></li>
             <li><a href="">Resolved</a></li>
             <li><a href="">Non-Issues</a></li>

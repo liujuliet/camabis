@@ -8,15 +8,20 @@
     HomeController.$inject = ['$location', 'DatabaseFactory', '$scope'];
 
     function HomeController($location, DatabaseFactory, $scope) {
+        $scope.showNav = true;
         activate();
 
-        //////// function definitions /////
+        /* Function Definitions */
         function activate() {
             DatabaseFactory.getConcerns(function (concerns) {
                 $scope.concernContainer = concerns;
             });
         }
 
+        /* Scope Functions */
+        $scope.toggleNav = function ()  {
+            $scope.showNav = !$scope.showNav;
+        }
     }
 
 })();

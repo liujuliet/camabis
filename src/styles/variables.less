@@ -15,12 +15,29 @@
 
 @border: 1px solid @color2;
 
+@mq-xs: ~"only screen and (max-width: 480px)";
+@mq-sm: ~"only screen and (max-width: 768px)";
+@mq-md: ~"only screen and (max-width: 1024px)";
+@mq-lg: ~"only screen and (max-width: 1400px)";
+
 
 /******************************************
 * Mixins
 ******************************************/
 
-.hunned-flex {
+/* Transitions */
+.transitionAll {
+    transition: all 0.2s;
+}
+
+/* Flex */
+.flex-hundop {
     display: flex;
     height: 100%;
+}
+
+.flex-between {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
 }

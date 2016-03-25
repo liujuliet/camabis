@@ -1,21 +1,34 @@
 @import "./../styles/variables.less";
 
 .header {
+    .flex-between;
     border-bottom: @border;
-    color: @color1;
+    display: flex;
     padding: 1rem 0;
     text-align: center;
     width: 100%;
+
+    > * {
+        display: inline-block;
+    }
+}
+
+.nav-toggle {
+    margin: 0 1.5em;
 }
 
 .main {
-    .hunned-flex;
+    .flex-hundop;
+
+    @media @mq-sm {
+        flex-direction: column;
+    }
 }
 
 .nav {
     border-right: @border;
+    max-height: 9999px;
     max-width: 200px;
-    min-width: 110px;
     width: 25%;
 
     * {
@@ -32,6 +45,22 @@
     a.active, a.active:hover {
         color: @textColor3;
         background-color: @color2;
+    }
+
+    @media @mq-sm {
+        border-bottom: @border;
+        max-width: initial;
+        width: 100%;
+    }
+}
+
+.nav.ng-hide {
+    max-width: 0;
+    opacity: 0;
+
+    @media @mq-sm {
+        max-height: 0;
+        max-width: initial;
     }
 }
 

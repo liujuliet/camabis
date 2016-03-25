@@ -82,6 +82,7 @@ p {
 }
 
 a, a:link, a:visited, a:active {
+    .transitionAll;
     color: @textColor1;
 }
 
@@ -93,12 +94,19 @@ a:hover {
 * Custom Styles
 ******************************************/
 
+.ng-hide-add, .ng-hide-remove,
+.ng-hide-add-active,
+.ng-hide-remove-active {
+  transition: 0.2s all;
+}
+
 .container {
+    box-sizing: border-box;
     padding: 1em;
 }
 
 .camabis {
-    .hunned-flex;
+    .flex-hundop;
     flex-direction: column;
 }
 
