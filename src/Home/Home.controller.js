@@ -5,10 +5,11 @@
         .module('app')
         .controller('HomeController', HomeController);
 
-    HomeController.$inject = ['$http', 'DatabaseFactory', '$scope'];
+    HomeController.$inject = ['$http', 'DatabaseFactory', '$scope', '$rootScope'];
 
-    function HomeController($http, DatabaseFactory, $scope) {
-        $scope.showNav = true;
+    function HomeController($http, DatabaseFactory, $scope, $rootScope) {
+        $rootScope.mobile = document.documentElement.classList.contains('mobile');
+        $scope.showNav = $rootScope.mobile ? false : true;
         activate();
 
         /* Function Definitions */
