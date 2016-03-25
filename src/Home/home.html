@@ -13,13 +13,20 @@
         </ul>
     </div>
 
-    <v-accordion class="vAccordion--default content container">
-        <v-pane ng-repeat="concern in concernContainer">
+    <v-accordion class="content">
+        <v-pane ng-repeat="concern in concernContainer" class="concern">
             <v-pane-header>
-                <p>{{concern.date}}</p>
+                <div class="concern-row">
+                    <label>{{jmap.severity[concern.severity]}}</label>
+                    <label>{{jmap.disease_type[concern.disease_type]}}</label>
+                    <label>Camera {{concern.camera_id}}</label>
+                    <label>{{concern.date}}</label>
+                </div>
             </v-pane-header>
             <v-pane-content>
-                <p>{{concern.status}}</p>
+                <div class="concern-content">
+                    <label>{{concern.status}}</label>
+                </div>
             </v-pane-content>
         </v-pane>
     </v-accordion>

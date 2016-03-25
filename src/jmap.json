@@ -1,0 +1,12 @@
+{
+    "disease_type": {
+        "1": "Yellow Tips",
+        "2": "Mould",
+        "3": "Holes"
+    },
+    "severity": {
+        "1": "low",
+        "2": "medium",
+        "3": "high"
+    }
+}

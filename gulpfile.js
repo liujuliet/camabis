@@ -12,6 +12,7 @@ var paths = {
     dist: 'dist',
     html: 'src/**/*.html',
     js: ['src/**/*.js', '!src/**/*.min.js'],
+    json: 'src/**/*.json',
     lib: 'src/**/*.min.js',
     less: 'src/**/*.less'
 }
@@ -35,6 +36,11 @@ gulp.task('copy:css', function() {
 
 gulp.task('copy:js', function() {
     gulp.src(paths.lib)
+        .pipe(gulp.dest(paths.dist));
+});
+
+gulp.task('copy:json', function() {
+    gulp.src(paths.json)
         .pipe(gulp.dest(paths.dist));
 });
 
@@ -68,6 +74,6 @@ gulp.task('watch', function() {
     gulp.watch(paths.js, ['scripts']);
 });
 
-gulp.task('build', ['clean', 'copy:css', 'copy:js', 'html', 'styles', 'scripts']);
+gulp.task('build', ['clean', 'copy:css', 'copy:js', 'copy:json', 'html', 'styles', 'scripts']);
 gulp.task('dev', ['build', 'connect', 'watch'])
 gulp.task('default', ['dev']);
