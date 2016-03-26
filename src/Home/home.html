@@ -17,8 +17,10 @@
             <v-pane ng-repeat="concern in concernContainer" class="concern">
                 <v-pane-header>
                     <div class="concern-row">
-                        <img src="http://placehold.it/216x162" class="hide-is-expanded">
-                        <img src="http://placehold.it/648x486" class="show-is-expanded">
+                        <div class="concern-row-image">
+                            <img src="http://placehold.it/216x162" class="hide-is-expanded">
+                            <img src="http://placehold.it/864x648" class="show-is-expanded">
+                        </div>
                         <div class="concern-row-group">
                             <i class="hide-is-expanded fa fa-circle severity {{jmap.severity[concern.severity]}}"></i>
                             <div>
@@ -30,10 +32,10 @@
                                 <label class="important-info">Camera {{concern.camera_id}}</label>
                                 <label class="space-below-is-expanded">{{jmap.disease_type[concern.disease_type]}}</label>
                                 <label class="show-is-expanded">{{concern.date}}</label>
-                                <hr class="show-is-expanded">
+                                <hr class="show-is-expanded hide-b-md">
                             </div>
                         </div>
-                        <label class="hide-is-expanded">{{concern.date}}</label>
+                        <label class="hide-is-expanded hide-b-xs">{{concern.date}}</label>
                     </div>
                 </v-pane-header>
                 <v-pane-content>

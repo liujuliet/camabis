@@ -59,6 +59,7 @@ html, body {
     font-family: @fontFamily;
     font-size: 14px;
     height: 100%;
+    min-width: 350px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -98,6 +99,18 @@ a:hover {
 .ng-hide-add-active,
 .ng-hide-remove-active {
   transition: 0.3s all;
+}
+
+.hide-b-xs {
+    @media @mq-xs { display: none; }
+}
+
+.hide-b-sm {
+    @media @mq-sm { display: none; }
+}
+
+.hide-b-md {
+    @media @mq-md { display: none; }
 }
 
 .container {
