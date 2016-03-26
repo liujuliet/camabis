@@ -16,7 +16,7 @@
 
 .nav-toggle {
     margin-left: 1.5em;
-    margin-right: 1.25em; // eye trickery
+    margin-right: 1.25em; // visual trickery
     vertical-align: super;
 }
 
@@ -107,9 +107,17 @@
     padding: 1.5em;
 }
 
-.concern-row-group {
+.concern-row:not(.is-expanded) .show-is-expanded {
+    display: none;
+}
+
+.concern-row:not(.is-expanded) .hide-is-expanded {
+    display: initial;
+}
+
+.concern-row .concern-row-group {
     flex-grow: 1;
-    padding: 1.5em;
+    padding: 1.5em 0 1.5em 1.5em;
 
     > * {
         display: inline-block;
@@ -119,18 +127,25 @@
     label {
         display: block;
         line-height: 1.25em;
-        margin-bottom: 0.5em;
 
         &:last-of-type {
             margin-bottom: 0;
         }
     }
+
+    hr {
+        margin: 1.5em 0;
+        width: 100%;
+    }
 }
 
-.concern-row .severity {
-    font-size: 1.5em;
-    margin-right: 1rem;
+.severity {
     text-transform: capitalize;
+
+    i& {
+        font-size: 1.5em;
+        margin-right: 1rem;
+    }
 
     &.low {
         color: @colorCaution;
@@ -145,9 +160,50 @@
     }
 }
 
-.concern-row .camera {
+.concern:not(.is-expanded) .concern-row .important-info {
     font-weight: @fontWeightSemiBold;
     font-size: 1.2em;
+    margin: 0.5em 0 0.5em -0.1em; // visual trickery
+}
+
+.concern.is-expanded .concern-row {
+    align-items: initial;
+    height: 500px;
+
+    .hide-is-expanded {
+        display: none;
+    }
+
+    .show-is-expanded {
+        display: block;
+    }
+
+    i.show-is-expanded {
+        display: inline-block;
+        margin-right: 0.25em;
+        vertical-align: middle;
+    }
+
+    label {
+        margin-bottom: 0.5em;
+    }
+
+    .space-below-is-expanded {
+        margin-bottom: 1.5em;
+    }
+
+    img {
+        flex-grow: 1;
+    }
+
+    .concern-row-group {
+        flex: initial;
+        min-width: 200px;
+
+        > div {
+            width: 100%;
+        }
+    }
 }
 
 .concern-content {

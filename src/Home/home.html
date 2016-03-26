@@ -17,22 +17,26 @@
             <v-pane ng-repeat="concern in concernContainer" class="concern">
                 <v-pane-header>
                     <div class="concern-row">
-                        <img src="http://placehold.it/216x162" alt="">
+                        <img src="http://placehold.it/216x162" class="hide-is-expanded">
+                        <img src="http://placehold.it/648x486" class="show-is-expanded">
                         <div class="concern-row-group">
-                            <i class="fa fa-circle severity {{jmap.severity[concern.severity]}}"></i>
+                            <i class="hide-is-expanded fa fa-circle severity {{jmap.severity[concern.severity]}}"></i>
                             <div>
-                                <label class="room">Room {{concern.room_id}}</label>
-                                <label class="camera">Camera {{concern.camera_id}}</label>
-                                <label class="disease-type">{{jmap.disease_type[concern.disease_type]}}</label>
+                                <label class="severity show-is-expanded space-below-is-expanded">
+                                    <i class="show-is-expanded fa fa-circle severity {{jmap.severity[concern.severity]}}"></i>
+                                    {{jmap.severity[concern.severity]}} Severity
+                                </label>
+                                <label>Room {{concern.room_id}}</label>
+                                <label class="important-info">Camera {{concern.camera_id}}</label>
+                                <label class="space-below-is-expanded">{{jmap.disease_type[concern.disease_type]}}</label>
+                                <label class="show-is-expanded">{{concern.date}}</label>
+                                <hr class="show-is-expanded">
                             </div>
                         </div>
-                        <label>{{concern.date}}</label>
+                        <label class="hide-is-expanded">{{concern.date}}</label>
                     </div>
                 </v-pane-header>
                 <v-pane-content>
-                    <div class="concern-content">
-                        <label>{{concern.status}}</label>
-                    </div>
                 </v-pane-content>
             </v-pane>
         </v-accordion>
