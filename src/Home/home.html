@@ -1,33 +1,40 @@
 <div class="header">
-    <a href="" class="nav-toggle" ng-click="toggleNav()"><i class="fa fa-bars"></i></a>
+    <a href="" class="nav-toggle" ng-click="toggleNav()"><i class="fa fa-fw fa-bars"></i></a>
     <h1>camabis</h1>
-    <div class="placeholder"></div>
 </div>
 
 <div class="main">
     <div class="nav" ng-show="showNav">
         <ul class="nowrap">
-            <li><a class="active" href="">Active</a></li>
-            <li><a href="">Resolved</a></li>
-            <li><a href="">Non-Issues</a></li>
+            <li><a class="active" href=""><i class="fa fa-fw fa-circle-o"></i>Active</a></li>
+            <li><a href=""><i class="fa fa-fw fa-circle"></i>Resolved</a></li>
+            <li><a href=""><i class="fa fa-fw fa-minus-circle"></i>Non-Issues</a></li>
         </ul>
     </div>
 
-    <v-accordion class="content">
-        <v-pane ng-repeat="concern in concernContainer" class="concern">
-            <v-pane-header>
-                <div class="concern-row">
-                    <label>{{jmap.severity[concern.severity]}}</label>
-                    <label>{{jmap.disease_type[concern.disease_type]}}</label>
-                    <label>Camera {{concern.camera_id}}</label>
-                    <label>{{concern.date}}</label>
-                </div>
-            </v-pane-header>
-            <v-pane-content>
-                <div class="concern-content">
-                    <label>{{concern.status}}</label>
-                </div>
-            </v-pane-content>
-        </v-pane>
-    </v-accordion>
+    <div class="content">
+        <v-accordion>
+            <v-pane ng-repeat="concern in concernContainer" class="concern">
+                <v-pane-header>
+                    <div class="concern-row">
+                        <img src="http://placehold.it/216x162" alt="">
+                        <div class="concern-row-group">
+                            <i class="fa fa-circle severity {{jmap.severity[concern.severity]}}"></i>
+                            <div>
+                                <label class="room">Room {{concern.room_id}}</label>
+                                <label class="camera">Camera {{concern.camera_id}}</label>
+                                <label class="disease-type">{{jmap.disease_type[concern.disease_type]}}</label>
+                            </div>
+                        </div>
+                        <label>{{concern.date}}</label>
+                    </div>
+                </v-pane-header>
+                <v-pane-content>
+                    <div class="concern-content">
+                        <label>{{concern.status}}</label>
+                    </div>
+                </v-pane-content>
+            </v-pane>
+        </v-accordion>
+    </div>
 </div>

@@ -2,8 +2,12 @@
 * Variables
 ******************************************/
 
-@color1: #66AF66;
-@color2: #C6C6C6;
+@color1: #7aae80;
+@color2: #D0D0D0;
+@color3: #F3F3F3;
+@colorCaution: #E6E470;
+@colorWarning: #E6A770;
+@colorDanger: #E67070;
 @textColor1: grey;
 @textColor2: black;
 @textColor3: white;
@@ -14,6 +18,7 @@
 @fontWeightBold: 900;
 
 @border: 1px solid @color2;
+@borderShadowRight: 2px 0px 3px -2px @color2;
 
 @mq-xs: ~"only screen and (max-width: 480px)";
 @mq-sm: ~"only screen and (max-width: 768px)";
@@ -37,7 +42,11 @@
 }
 
 .flex-between {
+    .flex-center-v;
+    justify-content: space-between;
+}
+
+.flex-center-v {
     align-items: center;
     display: flex;
-    justify-content: space-between;
 }
