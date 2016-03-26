@@ -4,7 +4,7 @@
   "description": "Cannabis disease identification system.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -23,7 +23,9 @@
     "firebase-tools": "^2.2.1",
     "gulp": "^3.9.1",
     "gulp-connect": "^2.2.0",
-    "gulp-watch": "^4.3.5"
+    "gulp-watch": "^4.3.5",
+    "ejs": "2.3.3",
+    "express": "4.13.3"
   },
   "devDependencies": {
     "del": "^2.2.0",
@@ -32,6 +34,11 @@
     "gulp-connect": "^2.3.1",
     "gulp-less": "^3.0.5",
     "gulp-sourcemaps": "^1.6.0",
-    "gulp-uglify": "^1.5.3"
+    "gulp-uglify": "^1.5.3",
+    "opencv": "^5.0.0"
+  },
+  "engines": {
+    "node": "5.9.1",
+    "npm": "3.7.3"
   }
 }
