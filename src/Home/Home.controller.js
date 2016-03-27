@@ -19,27 +19,38 @@
         $scope.status = 'new';
 
         /* Event Listeners */
-        uploadPhotoEl.onchange = function (e) {
-            uploadPhoto(e);
-        }
+        uploadPhotoEl.addEventListener('change', function (e) {
+            e.preventDefault();
+            var files = e.target.files;
 
-        goNewEl.onclick = function () {
+            for (var i = 0; i < files.length; i++) {
+                var file = files[i];
+
+                if (file.type.match(/image.*/)) {
+                    uploadPhoto(file);
+                } else {
+                    return alert("Only images are accepted.");
+                }
+            }
+        });
+
+        goNewEl.addEventListener('click', function (e) {
             if (!goNewEl.classList.contains('active')) {
                 makeActive(goNewEl);
             }
-        }
+        });
 
-        goResolvedEl.onclick = function () {
+        goResolvedEl.addEventListener('click', function (e) {
             if (!goResolvedEl.classList.contains('active')) {
                 makeActive(goResolvedEl);
             }
-        }
+        });
 
-        goNonissueEl.onclick = function () {
+        goNonissueEl.addEventListener('click', function (e) {
             if (!goNonissueEl.classList.contains('active')) {
                 makeActive(goNonissueEl);
             }
-        }
+        });
 
         /* Initiate */
         makeActive(goNewEl);
@@ -63,9 +74,22 @@
             });
         }
 
-        function uploadPhoto(e) {
-            e.preventDefault();
-            // document.querySelector("[name='upload-photo']").submit();
+        function uploadPhoto(file) {
+            var req = {
+                method: 'POST',
+                url: 'https://api.imgur.com/3/image',
+                headers: {
+                    'Authorization': 'Client-ID a83b8d484886938',
+                    'Content-type': 'application/x-www-form-urlencoded'
+                },
+                data: file
+            }
+
+            $http(req).then(function success (res) {
+                console.log(res.data.data.link);
+            }, function err (res) {
+                console.log(res);
+            });
         }
 
         function makeActive(el) {
