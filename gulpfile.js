@@ -46,11 +46,6 @@ gulp.task('copy:json', function() {
         .pipe(gulp.dest(paths.dist));
 });
 
-gulp.task('copy:views', function() {
-    gulp.src(paths.views)
-        .pipe(gulp.dest('dist/views'));
-});
-
 gulp.task('jade', function () {
     gulp.src(paths.jade)
         .pipe(jade())

@@ -37,7 +37,6 @@
     "gulp-less": "^3.0.5",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^1.5.3",
-    "html": "0.0.10",
     "opencv": "^5.0.0"
   },
   "engines": {
