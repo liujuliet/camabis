@@ -4,11 +4,11 @@ html
       div
         a.nav-toggle(href='', ng-click='toggleNav()')
           i.fa.fa-fw.fa-bars
-        h1 camabis
+        h1 Camabis
       form(name='upload-photo')
         label.custom-input
           i.fa.fa-camera
-          |             Take Photo
+          p Take Photo
           input(type='file', accept='image/*', capture='camera')
     .main
       .nav(ng-show='showNav')
@@ -39,7 +39,7 @@ html
                     img.hide-is-expanded(src='http://placehold.it/216x162')
                     img.show-is-expanded(src='http://placehold.it/864x648')
                   .concern-row-group
-                    i.hide-is-expanded.fa.fa-circle.severity(class='{{jmap.severity[concern.severity]}}')
+                    i.hide-is-expanded.fa.fa-circle.severity(class='{{concern.severity}}')
                     div
                       label.severity.show-is-expanded.space-below-is-expanded
                         i.show-is-expanded.fa.fa-circle.severity(class='{{jmap.severity[concern.severity]}}')

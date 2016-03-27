@@ -9,7 +9,7 @@
 /* Transitions */
 
 .transitionAll {
-  transition: all 0.3s;
+  transition: all 0.4s;
 }
 
 /* Flex */
@@ -46,6 +46,7 @@
 
 .header h1 {
   color: #7aae80;
+  font-family: 'Courgette', 'Open Sans', Helvetica, Arial, sans-serif;
 }
 
 .nav-toggle {
@@ -54,12 +55,12 @@
 }
 
 .custom-input {
-  transition: all 0.3s;
+  transition: all 0.4s;
   background-color: #7aae80;
-  border-radius: 3px;
+  border-radius: 3em;
   color: white;
   cursor: pointer;
-  padding: 1em;
+  padding: 1em 1.5em;
 }
 
 .custom-input:hover {
@@ -67,11 +68,21 @@
 }
 
 .custom-input i {
-  margin-right: 0.5em;
+  margin-right: 1em;
 }
 
 .custom-input input[type="file"] {
   display: none;
+}
+
+@media only screen and (max-width: 480px) {
+  .custom-input i {
+    margin-right: 0;
+  }
+
+  .custom-input p {
+    display: none;
+  }
 }
 
 .main {
@@ -115,7 +126,7 @@
 
 .nav a.active,
 .nav a.active:hover {
-  transition: all 0.3s;
+  transition: all 0.4s;
   color: white;
   background-color: #D0D0D0;
 }
@@ -295,7 +306,7 @@ i.severity {
 /* Transitions */
 
 .transitionAll {
-  transition: all 0.3s;
+  transition: all 0.4s;
 }
 
 /* Flex */
@@ -495,7 +506,7 @@ a,
 a:link,
 a:visited,
 a:active {
-  transition: all 0.3s;
+  transition: all 0.4s;
   color: grey;
 }
 
@@ -511,7 +522,7 @@ a:hover {
 .ng-hide-remove,
 .ng-hide-add-active,
 .ng-hide-remove-active {
-  transition: all 0.3s;
+  transition: all 0.4s;
 }
 
 @media only screen and (max-width: 480px) {
@@ -557,7 +568,7 @@ a:hover {
 /* Transitions */
 
 .transitionAll {
-  transition: all 0.3s;
+  transition: all 0.4s;
 }
 
 /* Flex */
