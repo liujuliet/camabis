@@ -20,8 +20,7 @@
     function getConcerns(callback) {
       $http.get(databaseUrl + '/concerns')
         .success(function (data) {
-          console.log('yessss');
-          callback(JSON.stringify(data));
+          callback(data);
         })
         .error(function (error) {
           console.log("Didn't get concerns properly" + error);

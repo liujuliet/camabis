@@ -32,7 +32,7 @@ html
             img(src="img/snoop.png", alt="Snoop Dogg throwing finger guns at you")
         else
           v-accordion
-            v-pane.concern(ng-repeat='concern in concernContainer track by concern.id')
+            v-pane.concern(ng-repeat='concern in concernContainer | filter:status')
               v-pane-header
                 .concern-row
                   .concern-row-image
