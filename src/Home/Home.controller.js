@@ -8,17 +8,41 @@
     HomeController.$inject = ['$http', 'DatabaseFactory', '$scope', '$rootScope'];
 
     function HomeController($http, DatabaseFactory, $scope, $rootScope) {
-        /* Query Selectors */
+        /* Element selectors and scope variables */
         var uploadPhotoEl = document.querySelector("[name='upload-photo']");
+        var goNewEl = document.querySelector("[role='goNew']");
+        var goResolvedEl = document.querySelector("[role='goResolved']");
+        var goNonissueEl = document.querySelector("[role='goNonissue']");
+
+        $rootScope.mobile = document.documentElement.classList.contains('mobile');
+        $scope.showNav = $rootScope.mobile ? false : true;
+        $scope.status = 'new';
 
         /* Event Listeners */
-        uploadPhotoEl.onchange =function (e) {
+        uploadPhotoEl.onchange = function (e) {
             uploadPhoto(e);
         }
 
+        goNewEl.onclick = function () {
+            if (!goNewEl.classList.contains('active')) {
+                makeActive(goNewEl);
+            }
+        }
+
+        goResolvedEl.onclick = function () {
+            if (!goResolvedEl.classList.contains('active')) {
+                makeActive(goResolvedEl);
+            }
+        }
+
+        goNonissueEl.onclick = function () {
+            if (!goNonissueEl.classList.contains('active')) {
+                makeActive(goNonissueEl);
+            }
+        }
+
         /* Initiate */
-        $rootScope.mobile = document.documentElement.classList.contains('mobile');
-        $scope.showNav = $rootScope.mobile ? false : true;
+        makeActive(goNewEl);
         activate();
 
         /* Function Definitions */
@@ -40,6 +64,13 @@
         function uploadPhoto(e) {
             e.preventDefault();
             // document.querySelector("[name='upload-photo']").submit();
+        }
+
+        function makeActive(el) {
+            goNewEl.classList.remove('active');
+            goResolvedEl.classList.remove('active');
+            goNonissueEl.classList.remove('active');
+            el.classList.add('active');
         }
 
         /* Scope Functions */

@@ -15,15 +15,15 @@
 <div class="main">
     <div class="nav" ng-show="showNav">
         <ul class="nowrap">
-            <li><a class="active" href=""><i class="fa fa-fw fa-circle-o"></i>Active</a></li>
-            <li><a href=""><i class="fa fa-fw fa-circle"></i>Resolved</a></li>
-            <li><a href=""><i class="fa fa-fw fa-minus-circle"></i>Non-Issues</a></li>
+            <li><a ng-click="status='new'" role="goNew"><i class="fa fa-fw fa-circle-o"></i>Active</a></li>
+            <li><a ng-click="status='resolved'" role="goResolved"><i class="fa fa-fw fa-circle"></i>Resolved</a></li>
+            <li><a ng-click="status='nonissue'" role="goNonissue"><i class="fa fa-fw fa-minus-circle"></i>Non-Issues</a></li>
         </ul>
     </div>
 
     <div class="content">
         <v-accordion>
-            <v-pane ng-repeat="concern in concernContainer" class="concern">
+            <v-pane ng-repeat="concern in concernContainer | filter:status" class="concern">
                 <v-pane-header>
                     <div class="concern-row">
                         <div class="concern-row-image">
