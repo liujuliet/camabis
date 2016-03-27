@@ -1,4 +1,5 @@
 var pg = require('pg');
+var http = require('http');
 var express = require('express');
 var app = express();
 
@@ -7,15 +8,11 @@ app.set('port', (process.env.PORT || 5000));
 app.use(express.static(__dirname + '/dist'));
 
 // views is directory for all template files
-// app.set('views', __dirname + '/dist');
-// app.set('view engine', 'ejs');
+app.set('views', __dirname + '/dist/views');
+app.set('view engine', 'jade');
 
 app.get('/', function(request, response) {
-  response.render('dist/index.html');
-});
-
-app.listen(app.get('port'), function() {
-  console.log('Node app is running on port', app.get('port'));
+  response.render('index');
 });
 
 app.get('/db', function (request, response) {
@@ -25,7 +22,11 @@ app.get('/db', function (request, response) {
       if (err)
        { console.error(err); response.send("Error " + err); }
       else
-       { response.render('pages/db', {results: result.rows} ); }
+       { response.render('/db', {results: result.rows} ); }
     });
   });
+});
+
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
 });
