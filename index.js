@@ -24,7 +24,7 @@ app.use(express.static(__dirname + '/dist'));
 // });
 
 app.get('/', function(req, res) {
-    res.sendfile('/index.html');
+    res.sendFile('dist/index.html');
 });
 
 app.listen(app.get('port'), function() {
