@@ -11,9 +11,11 @@ app.use(express.static(__dirname + '/dist'));
 app.set('views', __dirname + '/dist');
 app.set('view engine', 'html');
 
-app.get('/', function(request, response) {
-  response.render('index.html');
-});
+// app.get('/', function(request, response) {
+//   response.render('index.html');
+// });
+
+app.use(express.static(__dirname + '/dist'));
 
 app.get('/db', function (request, response) {
   pg.connect(process.env.DATABASE_URL, function(err, client, done) {
