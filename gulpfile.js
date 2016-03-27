@@ -12,9 +12,9 @@ var paths = {
     css: 'src/**/*.css',
     dist: 'dist',
     jade: 'views/**/*.jade',
-    js: ['src/**/*.js', '!src/**/*.min.js'],
+    js: ['src/**/*.js', '!src/**/*.min.js', '!index.js'],
     json: 'src/**/*.json',
-    lib: 'src/**/*.min.js',
+    lib: ['src/**/*.min.js', 'index.js'],
     less: 'src/**/*.less',
     views: 'views/**/*'
 }
