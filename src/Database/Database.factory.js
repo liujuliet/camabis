@@ -18,11 +18,12 @@
         //////// function definitions /////
 
         function getConcerns(callback) {
-            $http.get(databaseUrl + '/concerns.json').success(function (data) {
-                callback(data);
-            }).error(function (error) {
-                console.log("Didn't get concerns properly");
-            });
+            callback({});
+            // $http.get(databaseUrl + '/concerns.json').success(function (data) {
+            //     callback(data);
+            // }).error(function (error) {
+            //     console.log("Didn't get concerns properly");
+            // });
         }
 
         // function postStatusChange(concern_id, status) {

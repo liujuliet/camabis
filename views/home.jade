@@ -1,0 +1,48 @@
+html
+  body
+    .header
+      div
+        a.nav-toggle(href='', ng-click='toggleNav()')
+          i.fa.fa-fw.fa-bars
+        h1 camabis
+      form(name='upload-photo', action='', method='post')
+        label.custom-input
+          i.fa.fa-camera
+          |             Take Photo
+          input(type='file', accept='image/*', capture='camera')
+    .main
+      .nav(ng-show='showNav')
+        ul.nowrap
+          li
+            a(ng-click="status='new'" role="goNew")
+              i.fa.fa-fw.fa-circle-o
+              | Active
+          li
+            a(ng-click="status='resolved'" role="goResolved")
+              i.fa.fa-fw.fa-circle
+              | Resolved
+          li
+            a(ng-click="status='nonissue'" role="goNonissue")
+              i.fa.fa-fw.fa-minus-circle
+              | Non-Issues
+      .content
+        v-accordion
+          v-pane.concern(ng-repeat='concern in concernContainer | filter:status')
+            v-pane-header
+              .concern-row
+                .concern-row-image
+                  img.hide-is-expanded(src='http://placehold.it/216x162')
+                  img.show-is-expanded(src='http://placehold.it/864x648')
+                .concern-row-group
+                  i.hide-is-expanded.fa.fa-circle.severity(class='{{jmap.severity[concern.severity]}}')
+                  div
+                    label.severity.show-is-expanded.space-below-is-expanded
+                      i.show-is-expanded.fa.fa-circle.severity(class='{{jmap.severity[concern.severity]}}')
+                      |                                     {{jmap.severity[concern.severity]}} Severity
+                    label Room {{concern.room_id}}
+                    label.important-info Camera {{concern.camera_id}}
+                    label.space-below-is-expanded {{jmap.disease_type[concern.disease_type]}}
+                    label.show-is-expanded {{concern.date}}
+                    hr.show-is-expanded.hide-b-md
+                label.hide-is-expanded.hide-b-xs {{concern.date}}
+            v-pane-content

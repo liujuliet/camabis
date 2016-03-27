@@ -3,6 +3,7 @@ var gulp = require ('gulp'),
     concatCss = require('gulp-concat-css'),
     connect = require('gulp-connect'),
     del = require('del'),
+    jade = require('gulp-jade'),
     less = require('gulp-less'),
     sourcemaps = require('gulp-sourcemaps'),
     uglify = require('gulp-uglify');
@@ -10,11 +11,12 @@ var gulp = require ('gulp'),
 var paths = {
     css: 'src/**/*.css',
     dist: 'dist',
-    html: 'src/**/*.html',
+    jade: 'views/**/*.jade',
     js: ['src/**/*.js', '!src/**/*.min.js'],
     json: 'src/**/*.json',
     lib: 'src/**/*.min.js',
-    less: 'src/**/*.less'
+    less: 'src/**/*.less',
+    views: 'views/**/*'
 }
 
 gulp.task('clean', function() {
@@ -44,8 +46,9 @@ gulp.task('copy:json', function() {
         .pipe(gulp.dest(paths.dist));
 });
 
-gulp.task('html', function () {
-    gulp.src(paths.html)
+gulp.task('jade', function () {
+    gulp.src(paths.jade)
+        .pipe(jade())
         .pipe(gulp.dest(paths.dist))
         .pipe(connect.reload());
 });
@@ -69,11 +72,11 @@ gulp.task('styles', function() {
 });
 
 gulp.task('watch', function() {
-    gulp.watch(paths.html, ['html']);
+    gulp.watch(paths.jade, ['jade']);
     gulp.watch(paths.less, ['styles']);
     gulp.watch(paths.js, ['scripts']);
 });
 
-gulp.task('build', ['clean', 'copy:css', 'copy:js', 'copy:json', 'html', 'styles', 'scripts']);
+gulp.task('build', ['clean', 'copy:css', 'copy:js', 'copy:json', 'jade', 'styles', 'scripts']);
 gulp.task('dev', ['build', 'connect', 'watch'])
 gulp.task('default', ['dev']);
