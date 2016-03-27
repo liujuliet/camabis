@@ -19,7 +19,7 @@ app.get('/', function(request, response) {
 router.get('/concerns', function(req, res) {
   var results = [];
   pg.connect(connectionString, function(err, client, done) {
-    client.query('SELECT * FROM concerns;', function(err, result) {
+    client.query('SELECT * FROM concerns ORDER BY date DESC;', function(err, result) {
       done();
 
       res.json(result.rows);
