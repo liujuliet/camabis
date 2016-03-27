@@ -27,7 +27,7 @@ html
               | Non-Issues
       .content
         v-accordion
-          v-pane.concern(ng-repeat='concern in concernContainer')
+          v-pane.concern(ng-repeat='concern in concernContainer track by concern.id')
             v-pane-header
               .concern-row
                 .concern-row-image
