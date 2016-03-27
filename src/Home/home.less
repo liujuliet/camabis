@@ -1,11 +1,13 @@
 @import "./../styles/variables.less";
 
 .header {
+    .flex-between;
     border-bottom: @border;
-    padding: 1rem 0;
+    box-sizing: border-box;
+    padding: 1rem 1.5rem;
     width: 100%;
 
-    > * {
+    * {
         display: inline-block;
     }
 
@@ -15,9 +17,24 @@
 }
 
 .nav-toggle {
-    margin-left: 1.5em;
     margin-right: 1.25em; // visual trickery
     vertical-align: super;
+}
+
+.custom-input {
+    background-color: @color1;
+    border-radius: 5px;
+    color: @textColor3;
+    cursor: pointer;
+    padding: 1em;
+
+    i {
+        margin-right: 0.5em;
+    }
+
+    input[type="file"] {
+        display: none;
+    }
 }
 
 .main {
