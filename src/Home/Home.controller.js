@@ -58,7 +58,6 @@
 
         /* Function Definitions */
         function activate() {
-            console.log('Home activated');
             getJmap();
             DatabaseFactory.getConcerns(function (concerns) {
                 $scope.concernContainer = concerns;
