@@ -22,11 +22,16 @@
 }
 
 .custom-input {
+    .transitionAll;
     background-color: @color1;
-    border-radius: 5px;
+    border-radius: 3px;
     color: @textColor3;
     cursor: pointer;
     padding: 1em;
+
+    &:hover {
+        background-color: darken(@color1, 10%);
+    }
 
     i {
         margin-right: 0.5em;
@@ -61,6 +66,7 @@
 
     a {
         box-sizing: border-box;
+        cursor: pointer;
         padding: 1.5em;
         display: inline-block;
         text-decoration: none;
@@ -72,6 +78,7 @@
     }
 
     a.active, a.active:hover {
+        .transitionAll;
         color: @textColor3;
         background-color: @color2;
     }
