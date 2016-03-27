@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/liujuliet/camabis",
   "dependencies": {
+    "http": "~0.0.0",
     "angular": "^1.5.1",
     "firebase": "^2.4.1",
     "firebase-tools": "^2.2.1",
