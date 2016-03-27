@@ -9,6 +9,7 @@ app.use(express.static(__dirname + '/dist'));
 
 // views is directory for all template files
 app.set('views', __dirname + '/dist');
+app.set('view engine', 'html');
 
 app.get('/', function(request, response) {
   response.render('index.html');
