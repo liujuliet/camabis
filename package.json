@@ -19,6 +19,7 @@
   "dependencies": {
     "angular": "^1.5.1",
     "body-parser": "^1.15.0",
+    "cors": "^2.7.1",
     "express": "4.13.3",
     "http": "~0.0.0",
     "jade": "^1.11.0",

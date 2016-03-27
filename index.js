@@ -2,6 +2,7 @@ var pg = require('pg');
 var http = require('http');
 var express = require('express');
 var bodyParser = require('body-parser');
+var cors = require('cors');
 var app = express();
 var router = express.Router();
 
@@ -11,6 +12,7 @@ app.set('port', (process.env.PORT || 5000));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/dist'));
+app.use(cors());
 
 app.get('/', function(request, response) {
   response.sendFile(__dirname + '/dist/index.html');
