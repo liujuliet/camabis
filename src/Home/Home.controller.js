@@ -61,7 +61,6 @@
             getJmap();
             DatabaseFactory.getConcerns(function (concerns) {
                 $scope.concernContainer = concerns;
-                console.log(concerns);
             });
         }
 

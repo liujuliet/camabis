@@ -20,8 +20,6 @@
     function getConcerns(callback) {
       $http.get(databaseUrl + '/concerns')
         .success(function (data) {
-          console.log('This is inside getConcerns. Data:');
-          console.log(data);
           callback(data);
         })
         .error(function (error) {
