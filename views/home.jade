@@ -14,20 +14,20 @@ html
       .nav(ng-show='showNav')
         ul.nowrap
           li
-            a.active(href='')
+            a(ng-click="status='new'" role="goNew")
               i.fa.fa-fw.fa-circle-o
               | Active
           li
-            a(href='')
+            a(ng-click="status='resolved'" role="goResolved")
               i.fa.fa-fw.fa-circle
               | Resolved
           li
-            a(href='')
+            a(ng-click="status='nonissue'" role="goNonissue")
               i.fa.fa-fw.fa-minus-circle
               | Non-Issues
       .content
         v-accordion
-          v-pane.concern(ng-repeat='concern in concernContainer')
+          v-pane.concern(ng-repeat='concern in concernContainer | filter:status')
             v-pane-header
               .concern-row
                 .concern-row-image
