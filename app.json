@@ -1,0 +1,8 @@
+{
+  "name": "Camabis",
+  "description": "App to display diseased cannabis plants",
+  "repository": "https://github.com/liujuliet/camabis",
+  "logo": "http://node-js-sample.herokuapp.com/node.svg",
+  "keywords": ["node", "express", "postgres", "angular"],
+  "image": "heroku/nodejs"
+}
