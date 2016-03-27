@@ -27,7 +27,7 @@ html
               | Non-Issues
       .content
         v-accordion
-          v-pane.concern(ng-repeat='concern in concernContainer | filter:status')
+          v-pane.concern(ng-repeat='concern in concernContainer')
             v-pane-header
               .concern-row
                 .concern-row-image
