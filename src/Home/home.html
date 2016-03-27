@@ -1,6 +1,15 @@
 <div class="header">
-    <a href="" class="nav-toggle" ng-click="toggleNav()"><i class="fa fa-fw fa-bars"></i></a>
-    <h1>camabis</h1>
+    <div>
+        <a href="" class="nav-toggle" ng-click="toggleNav()"><i class="fa fa-fw fa-bars"></i></a>
+        <h1>camabis</h1>
+    </div>
+    <form name="upload-photo" action="" method="post">
+        <label class="custom-input">
+            <i class="fa fa-camera"></i>
+            Take Photo
+            <input type="file" accept="image/*" capture="camera">
+        </label>
+    </form>
 </div>
 
 <div class="main">
