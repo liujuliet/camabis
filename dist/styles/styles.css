@@ -154,6 +154,12 @@
   }
 }
 
+.no-concerns {
+  bottom: 0;
+  position: absolute;
+  right: 0;
+}
+
 .concern {
   box-shadow: 0px 0px 1px 1px #D0D0D0;
   background-color: white;

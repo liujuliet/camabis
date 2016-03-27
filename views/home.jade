@@ -26,23 +26,28 @@ html
               i.fa.fa-fw.fa-minus-circle
               | Non-Issues
       .content
-        v-accordion
-          v-pane.concern(ng-repeat='concern in concernContainer track by concern.id')
-            v-pane-header
-              .concern-row
-                .concern-row-image
-                  img.hide-is-expanded(src='http://placehold.it/216x162')
-                  img.show-is-expanded(src='http://placehold.it/864x648')
-                .concern-row-group
-                  i.hide-is-expanded.fa.fa-circle.severity(class='{{jmap.severity[concern.severity]}}')
-                  div
-                    label.severity.show-is-expanded.space-below-is-expanded
-                      i.show-is-expanded.fa.fa-circle.severity(class='{{jmap.severity[concern.severity]}}')
-                      |                                     {{jmap.severity[concern.severity]}} Severity
-                    label Room {{concern.room_id}}
-                    label.important-info Camera {{concern.camera_id}}
-                    label.space-below-is-expanded {{jmap.disease_type[concern.disease_type]}}
-                    label.show-is-expanded {{concern.date}}
-                    hr.show-is-expanded.hide-b-md
-                label.hide-is-expanded.hide-b-xs {{concern.date}}
-            v-pane-content
+        if !concernContainer
+          .no-concerns
+            p All good
+            img(src="img/snoop.png", alt="Snoop Dogg throwing finger guns at you")
+        else
+          v-accordion
+            v-pane.concern(ng-repeat='concern in concernContainer track by concern.id')
+              v-pane-header
+                .concern-row
+                  .concern-row-image
+                    img.hide-is-expanded(src='http://placehold.it/216x162')
+                    img.show-is-expanded(src='http://placehold.it/864x648')
+                  .concern-row-group
+                    i.hide-is-expanded.fa.fa-circle.severity(class='{{jmap.severity[concern.severity]}}')
+                    div
+                      label.severity.show-is-expanded.space-below-is-expanded
+                        i.show-is-expanded.fa.fa-circle.severity(class='{{jmap.severity[concern.severity]}}')
+                        |                                     {{jmap.severity[concern.severity]}} Severity
+                      label Room {{concern.room_id}}
+                      label.important-info Camera {{concern.camera_id}}
+                      label.space-below-is-expanded {{jmap.disease_type[concern.disease_type]}}
+                      label.show-is-expanded {{concern.date}}
+                      hr.show-is-expanded.hide-b-md
+                  label.hide-is-expanded.hide-b-xs {{concern.date}}
+              v-pane-content

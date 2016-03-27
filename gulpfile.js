@@ -11,12 +11,12 @@ var gulp = require ('gulp'),
 var paths = {
     css: 'src/**/*.css',
     dist: 'dist',
+    img: 'src/**/*.png',
     jade: 'views/**/*.jade',
     js: ['src/**/*.js', '!src/**/*.min.js', '!index.js'],
     json: 'src/**/*.json',
     lib: ['src/**/*.min.js', 'index.js'],
-    less: 'src/**/*.less',
-    views: 'views/**/*'
+    less: 'src/**/*.less'
 }
 
 gulp.task('clean', function() {
@@ -33,6 +33,11 @@ gulp.task('connect', function() {
 
 gulp.task('copy:css', function() {
     gulp.src(paths.css)
+        .pipe(gulp.dest(paths.dist));
+});
+
+gulp.task('copy:img', function() {
+    gulp.src(paths.img)
         .pipe(gulp.dest(paths.dist));
 });
 
@@ -77,6 +82,6 @@ gulp.task('watch', function() {
     gulp.watch(paths.js, ['scripts']);
 });
 
-gulp.task('build', ['clean', 'copy:css', 'copy:js', 'copy:json', 'jade', 'styles', 'scripts']);
+gulp.task('build', ['clean', 'copy:css', 'copy:img', 'copy:js', 'copy:json', 'jade', 'styles', 'scripts']);
 gulp.task('dev', ['build', 'connect', 'watch'])
 gulp.task('default', ['dev']);
