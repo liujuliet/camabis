@@ -83,5 +83,5 @@ gulp.task('watch', function() {
 });
 
 gulp.task('build', ['clean', 'copy:css', 'copy:img', 'copy:js', 'copy:json', 'jade', 'styles', 'scripts']);
-gulp.task('dev', ['build', 'connect', 'watch'])
+gulp.task('dev', ['build', 'connect', 'watch']);
 gulp.task('default', ['dev']);
