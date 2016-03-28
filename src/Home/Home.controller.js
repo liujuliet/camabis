@@ -23,19 +23,17 @@
         /* Event Listeners */
         uploadPhotoEl.addEventListener('change', function (e) {
             e.preventDefault();
-            uploadPhotoEl.submit();
-            // var files = e.target.files;
+            var files = e.target.files;
 
-            // for (var i = 0; i < files.length; i++) {
-            //     var file = files[i];
+            for (var i = 0; i < files.length; i++) {
+                var file = files[i];
 
-            //     if (file.type.match(/image.*/)) {
-            //         // console.log(file.name);
-            //         uploadButtonHandler(file);
-            //     } else {
-            //         return alert("Only images are accepted.");
-            //     }
-            // }
+                if (file.type.match(/image.*/)) {
+                    uploadPhoto(file);
+                } else {
+                    return alert("Only images are accepted.");
+                }
+            }
         });
 
         goNewEl.addEventListener('click', function (e) {
@@ -124,8 +122,7 @@
 
             $http(req).then(function success (res) {
                 console.log(res.data.data.link);
-
-                return res.data.data.link;
+                // DatabaseFactory.postPhoto(file);
             }, function err (res) {
                 console.log(res);
             });
