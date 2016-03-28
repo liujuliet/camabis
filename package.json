@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/liujuliet/camabis.git"
+    "url": "https://github.com/melkuo/camabis.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/liujuliet/camabis/issues"
+    "url": "https://github.com/melkuo/camabis/issues"
   },
-  "homepage": "https://github.com/liujuliet/camabis",
+  "homepage": "https://github.com/melkuo/camabis",
   "dependencies": {
     "angular": "^1.5.1",
     "async": "^2.0.0-rc.2",
