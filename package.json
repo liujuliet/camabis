@@ -23,7 +23,9 @@
     "express": "4.13.3",
     "http": "~0.0.0",
     "jade": "^1.11.0",
-    "pg": "4.x"
+    "multer": "^1.1.0",
+    "pg": "4.x",
+    "opencv": "^5.0.0"
   },
   "devDependencies": {
     "del": "^2.2.0",

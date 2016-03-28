@@ -11,19 +11,30 @@
   function DatabaseFactory($http, databaseUrl, $rootScope) {
     var service = {
         getConcerns: getConcerns,
-        // postStatusChange: postStatusChange
+        postPhoto: postPhoto
     };
     return service;
 
     //////// function definitions /////
 
     function getConcerns(callback) {
-      $http.get(databaseUrl + '/concerns')
+      $http.get(databaseUrl + '/api/concerns')
         .success(function (data) {
           callback(data);
         })
         .error(function (error) {
           console.log("Didn't get concerns properly" + error);
+        });
+    }
+
+    function postPhoto(file) {
+      console.log(file);
+      $http.post('https://camabis.herokuapp.com/api/photo', file)
+        .success(function() {
+          console.log("Successfully posted")
+        })
+        .error(function (error) {
+          console.log("Didn't post photo properly" + error);
         });
     }
 

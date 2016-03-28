@@ -29,7 +29,8 @@
                 var file = files[i];
 
                 if (file.type.match(/image.*/)) {
-                    uploadPhoto(file);
+                    // console.log(file.name);
+                    uploadButtonHandler(file);
                 } else {
                     return alert("Only images are accepted.");
                 }
@@ -86,6 +87,28 @@
             });
         }
 
+        function uploadButtonHandler(file) {
+            // DatabaseFactory.postPhoto(file);
+
+            var req = {
+                method: 'POST',
+                url: '/api/photo',
+                headers: {
+                    'enctype': 'multipart/form-data',
+                    // 'Content-type': 'application/x-www-form-urlencoded',
+                    'Access-Control-Allow-Origin': '*'
+                },
+                data: file
+            };
+
+            $http(req).then(function success (res) {
+                console.log(res);
+            }, function err (res) {
+                console.log('ERROR');
+                console.log(res);
+            });
+        }
+
         function uploadPhoto(file) {
             var req = {
                 method: 'POST',
@@ -99,6 +122,8 @@
 
             $http(req).then(function success (res) {
                 console.log(res.data.data.link);
+
+                return res.data.data.link;
             }, function err (res) {
                 console.log(res);
             });
