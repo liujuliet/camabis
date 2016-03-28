@@ -99,6 +99,7 @@
 
             $http(req).then(function success (res) {
                 console.log(res.data.data.link);
+                console.log(res.data.data);
                 DatabaseFactory.postPhoto(res.data.data, function(){});
             }, function err (res) {
                 console.log(res);
