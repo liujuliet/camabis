@@ -4,7 +4,7 @@ var express = require('express');
 var app = express();
 // var bodyParser = require('body-parser');
 var cors = require('cors');
-var cv = require( 'opencv');
+// var cv = require( 'opencv');
 var imgProc = require('./imageProcessing.js');
 var router = express.Router();
 var multer = require('multer');
@@ -41,7 +41,7 @@ router.post('/api/photo', uploading.single('userPhoto'), function(req, res) {
   // if (res.error) {
   //   return res.end('Error uploading file!');
   // }
-  imgProc.diseaseClassifier(cv, req.file.path, 6);
+  // imgProc.diseaseClassifier(cv, req.file.path, 6);
   res.end('File is uploaded!!! ^_^');
 });
 
