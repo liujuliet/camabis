@@ -2,15 +2,15 @@ var pg = require('pg');
 var http = require('http');
 var express = require('express');
 var app = express();
-// var bodyParser = require('body-parser');
+var bodyParser = require('body-parser');
 var cors = require('cors');
 var router = express.Router();
 
 var connectionString = process.env.DATABASE_URL; //|| 'postgres://localhost:5432/testdb';
 app.set('port', (process.env.PORT || 5000));
 
-// app.use(bodyParser.urlencoded({ extended: true }));
-// app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 app.use(express.static(__dirname + '/dist'));
 app.use(cors());
 
@@ -30,9 +30,9 @@ router.get('/api/concerns', function(req, res) {
 });
 
 router.post('/api/photo', function(req, res) {
-  console.log(req.data);
+  console.log(req.body);
   pg.connect(connectionString, function(err, client, done) {
-    client.query("INSERT INTO concerns (status, room_id, camera_id, disease_type, severity, image_filename) values('new', 1, 1, 1, 1, {});".format(req), function(err, result) {
+    client.query("INSERT INTO concerns (status, room_id, camera_id, disease_type, severity, image_filename) values('new', 1, 1, 1, 1, {});".format(req.body), function(err, result) {
       done();
 
       res.json(result.rows);
