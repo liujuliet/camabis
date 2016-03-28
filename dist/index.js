@@ -55,7 +55,7 @@ router.post('/api/photo', function(req, res) {
   });
 });
 
-fs.readdir(__dirname + '/img', function (err, data) {
+fs.readdir(__dirname + '/dist/img', function (err, data) {
   if (err) {console.log('couldnt read img folder from server ' + err); return;}
   console.log('************* readdir ********************');
   console.log(data);
