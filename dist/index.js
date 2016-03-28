@@ -36,7 +36,7 @@ router.get('api/newestLink', function(req, res) {
       console.log(result);
       done();
 
-      res.send(result);
+      res.json(result);
     });
   });
 });
