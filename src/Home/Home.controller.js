@@ -102,6 +102,7 @@
             };
 
             $http(req).then(function success (res) {
+                console.log('SUCCESSSS inside button handler');
                 console.log(res);
             }, function err (res) {
                 console.log('ERROR');

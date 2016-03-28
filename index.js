@@ -8,6 +8,7 @@ var cors = require('cors');
 var imgProc = require('./imageProcessing.js');
 var router = express.Router();
 var multer = require('multer');
+var fs = require('fs');
 var storage = multer.diskStorage({
   destination: function(req, file, callback) {
     callback(null, './uploads');
@@ -49,9 +50,14 @@ router.post('/api/photo', function(req, res) {
     if (err) {
       return res.end('Error uploading file!');
     }
-    console.log(req.body);
+    console.log(req);
     res.end('File is uploaded.');
   });
+});
+
+fs.readdir(__dirname + '/uploads', function (err, data) {
+  if (err) console.log('couldnt read uploads from server ' + err);
+  console.log(data);
 });
 
 // all the routes will be prefixed with /api
