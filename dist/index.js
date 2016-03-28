@@ -13,7 +13,7 @@ var uploading = multer({
   dest : __dirname + '/dist/img/'
 });
 
-var connectionString = 'postgres://localhost:5432/testdb'; // process.env.DATABASE_URL
+var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/testdb';
 app.set('port', (process.env.PORT || 5000));
 
 // app.use(bodyParser.urlencoded({ extended: true }));

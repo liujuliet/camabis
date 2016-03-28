@@ -29,7 +29,7 @@
 
     function postPhoto(file) {
       console.log(file);
-      $http.post('https://camabis.herokuapp.com/api/photo', file)
+      $http.post(databaseUrl + '/api/photo', file)
         .success(function() {
           console.log("Successfully posted")
         })
