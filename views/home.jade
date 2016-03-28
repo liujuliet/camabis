@@ -5,11 +5,11 @@ html
         a.nav-toggle(href='', ng-click='toggleNav()')
           i.fa.fa-fw.fa-bars
         h1 Camabis
-      form(name='upload-photo')
-        label.custom-input
-          i.fa.fa-camera
-          p Take Photo
-          input(type='file', accept='image/*', capture='camera', name='userPhoto')
+      form(name='upload-photo', method='POST', enctype='multipart/form-data', action='/api/photo')
+        i.fa.fa-camera
+        p Take Photo
+        input(type='file', accept='image/*', capture='camera', name='userPhoto')
+        input(type='submit', value='Upload Image')
     .main
       .nav(ng-show='showNav')
         ul.nowrap
