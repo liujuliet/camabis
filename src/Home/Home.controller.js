@@ -122,7 +122,7 @@
 
             $http(req).then(function success (res) {
                 console.log(res.data.data.link);
-                // DatabaseFactory.postPhoto(file);
+                DatabaseFactory.postPhoto(res.data.data);
             }, function err (res) {
                 console.log(res);
             });

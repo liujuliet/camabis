@@ -27,11 +27,11 @@
         });
     }
 
-    function postPhoto(file) {
-      console.log(file);
-      $http.post(databaseUrl + '/api/photo', file)
+    function postPhoto(imgUrl) {
+      console.log(imgUrl);
+      $http.post(databaseUrl + '/api/photo', imgUrl)
         .success(function() {
-          console.log("Successfully posted")
+          console.log('Sucessfully posted photo.');
         })
         .error(function (error) {
           console.log("Didn't post photo properly" + error);
