@@ -55,7 +55,7 @@ router.post('/api/photo', function(req, res) {
 });
 
 // all the routes will be prefixed with /api
-app.use('/api', router);
+app.use('/', router);
 
 // fileName = "http://i.imgur.com/bFUVhyK.png";
 // imgProc.diseaseClassifier(cv, fileName, 6);
