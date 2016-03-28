@@ -37,7 +37,7 @@ router.get('/api/concerns', function(req, res) {
   });
 });
 
-router.post('/api/photo', uploading, function(req, res) {
+router.post('/api/photo', uploading.single('userPhoto'), function(req, res) {
   if (err) {
     return res.end('Error uploading file!');
   }
