@@ -9,16 +9,10 @@ var imgProc = require('./imageProcessing.js');
 var router = express.Router();
 var multer = require('multer');
 var fs = require('fs');
-var storage = multer.diskStorage({
-  destination: function(req, file, callback) {
-    callback(null, './dist/img');
-  },
-  filename: function(req, file, callback) {
-    callback(null, 'myImage');
-  }
-});
 
-var upload = multer({ storage : storage}).single('userPhoto');
+var uploading = multer({
+  dest : __dirname + '/dist/img/'
+});
 
 var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/testdb';
 app.set('port', (process.env.PORT || 5000));
@@ -43,13 +37,11 @@ router.get('/api/concerns', function(req, res) {
   });
 });
 
-router.post('/api/photo', function(req, res) {
-  upload(req, res, function(err) {
-    if (err) {
-      return res.end('Error uploading file!');
-    }
-    res.end('File is uploaded.');
-  });
+router.post('/api/photo', uploading, function(req, res) {
+  if (err) {
+    return res.end('Error uploading file!');
+  }
+  res.end('File is uploaded!!! ^_^');
 });
 
 fs.readdir(__dirname + '/dist/img', function (err, data) {
