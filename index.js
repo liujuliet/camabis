@@ -32,6 +32,7 @@ router.get('/api/concerns', function(req, res) {
 router.get('api/newestLink', function(req, res) {
   pg.connect(connectionString, function(err, client, done) {
     client.query('SELECT image_filename FROM concerns ORDER BY date DESC limit 1;', function(err, result) {
+      console.log(result);
       done();
 
       res.send(result);
