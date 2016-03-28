@@ -36,7 +36,7 @@ router.get('/api/newestLink', function(req, res) {
       console.log(result);
       done();
 
-      res.json(result);
+      res.send(result.rows[0].image_filename);
     });
   });
 });
