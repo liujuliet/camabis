@@ -11,7 +11,7 @@ var multer = require('multer');
 var fs = require('fs');
 var storage = multer.diskStorage({
   destination: function(req, file, callback) {
-    callback(null, './img');
+    callback(null, './dist/img');
   },
   filename: function(req, file, callback) {
     callback(null, 'myImage');
@@ -44,13 +44,10 @@ router.get('/api/concerns', function(req, res) {
 });
 
 router.post('/api/photo', function(req, res) {
-  console.log('Inside api photo POST');
-
   upload(req, res, function(err) {
     if (err) {
       return res.end('Error uploading file!');
     }
-    console.log(req);
     res.end('File is uploaded.');
   });
 });
