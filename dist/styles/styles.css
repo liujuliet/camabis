@@ -204,7 +204,7 @@
 
 .concern-row .concern-row-group {
   flex-grow: 1;
-  padding: 1.5em 0 1.5em 1.5em;
+  padding: 1.5em 0 0 1.5em;
 }
 
 .concern-row .concern-row-group > * {
@@ -285,15 +285,23 @@ i.severity {
 }
 
 .concern.is-expanded .concern-row-group {
-  min-width: 200px;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  min-width: 250px;
 }
 
 .concern.is-expanded .concern-row-group > div {
   width: 100%;
 }
 
-.concern-content {
-  padding: 1.5em;
+.concern.is-expanded .button-container {
+  display: flex;
+}
+
+.concern.is-expanded .button-container > button {
+  width: 100%;
 }
 /******************************************
 * Variables
@@ -512,6 +520,33 @@ a:active {
 
 a:hover {
   color: #7aae80;
+}
+
+button {
+  transition: all 0.4s;
+  background-color: #7aae80;
+  border: none;
+  border-radius: 3em;
+  color: white;
+  cursor: pointer;
+  font-size: 1em;
+  padding: 1em;
+}
+
+button:hover {
+  background-color: #5d9864;
+}
+
+button ~ button {
+  margin-left: 0.5em;
+}
+
+button.secondary {
+  background-color: #D0D0D0;
+}
+
+button.secondary:hover {
+  background-color: #b7b7b7;
 }
 
 /******************************************

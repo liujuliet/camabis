@@ -162,7 +162,7 @@
 
 .concern-row .concern-row-group {
     flex-grow: 1;
-    padding: 1.5em 0 1.5em 1.5em;
+    padding: 1.5em 0 0 1.5em;
 
     > * {
         display: inline-block;
@@ -244,14 +244,20 @@
     }
 
     .concern-row-group {
-        min-width: 200px;
+        .flex-between;
+        flex-direction: column;
+        min-width: 250px;
 
         > div {
             width: 100%;
         }
     }
-}
 
-.concern-content {
-    padding: 1.5em;
+    .button-container {
+        display: flex;
+
+        > button {
+            width: 100%;
+        }
+    }
 }
