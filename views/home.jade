@@ -38,17 +38,27 @@ html
                   .concern-row-image
                     img.hide-is-expanded(src='http://placehold.it/216x162')
                     img.show-is-expanded(src='http://placehold.it/864x648')
-                  .concern-row-group
-                    i.hide-is-expanded.fa.fa-circle.severity(class='{{jmap.severity[concern.severity]}}')
+                  .concern-row-group.hide-is-expanded
+                    i.fa.fa-circle.severity(class='{{jmap.severity[concern.severity]}}')
                     div
-                      label.severity.show-is-expanded.space-below-is-expanded
-                        i.show-is-expanded.fa.fa-circle.severity(class='{{jmap.severity[concern.severity]}}')
-                        | {{jmap.severity[concern.severity]}} Severity
                       label Room {{concern.room_id}}
                       label.important-info Camera {{concern.camera_id}}
-                      label.space-below-is-expanded {{jmap.disease_type[concern.disease_type]}}
-                      label.show-is-expanded {{ concern.date | date:"EEE, MMM d, h:mm a"}}
-                      hr.show-is-expanded.hide-b-md
+                      label {{jmap.disease_type[concern.disease_type]}}
+                  .concern-row-group.show-is-expanded
+                    div.info-container
+                      .severity
+                        i.fa.fa-fw.fa-circle.severity(class='{{jmap.severity[concern.severity]}}')
+                        label {{jmap.severity[concern.severity]}} Severity
+                      div
+                        i.fa.fa-fw.fa-map-marker
+                        label Room {{concern.room_id}}, Camera {{concern.camera_id}}
+                      div
+                        i.fa.fa-fw.fa-info-circle
+                        label {{jmap.disease_type[concern.disease_type]}}
+                      div
+                        i.fa.fa-fw.fa-calendar
+                        label {{ concern.date | date:"EEE, MMM d, h:mm a"}}
+                      hr.hide-b-md
                     div.button-container.show-is-expanded
                       button Resolve
                       button.secondary Not an Issue

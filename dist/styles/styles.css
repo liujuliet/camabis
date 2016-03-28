@@ -113,6 +113,7 @@
 
 .nav a {
   box-sizing: border-box;
+  color: grey;
   cursor: pointer;
   padding: 1.5em;
   display: inline-block;
@@ -270,30 +271,32 @@ i.severity {
   }
 }
 
-.concern.is-expanded i.show-is-expanded {
+.concern.is-expanded i {
   font-size: 1em;
-  margin-right: 0.25em;
+  margin-right: 0.75em;
   vertical-align: middle;
 }
 
 .concern.is-expanded label {
+  display: inline-block;
   margin-bottom: 0.5em;
 }
 
-.concern.is-expanded .space-below-is-expanded {
-  margin-bottom: 1.5em;
-}
-
-.concern.is-expanded .concern-row-group {
+.concern.is-expanded .concern-row-group.show-is-expanded {
   align-items: center;
   display: flex;
   justify-content: space-between;
+  color: #505050;
   flex-direction: column;
   min-width: 250px;
 }
 
-.concern.is-expanded .concern-row-group > div {
+.concern.is-expanded .concern-row-group.show-is-expanded > div {
   width: 100%;
+}
+
+.concern.is-expanded .info-container > div {
+  margin-bottom: 1em;
 }
 
 .concern.is-expanded .button-container {
