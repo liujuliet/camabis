@@ -86,29 +86,6 @@
             });
         }
 
-        function uploadButtonHandler(file) {
-            // DatabaseFactory.postPhoto(file);
-
-            var req = {
-                method: 'POST',
-                url: '/api/photo',
-                headers: {
-                    'enctype': 'multipart/form-data',
-                    // 'Content-type': 'application/x-www-form-urlencoded',
-                    'Access-Control-Allow-Origin': '*'
-                },
-                data: file
-            };
-
-            $http(req).then(function success (res) {
-                console.log('SUCCESSSS inside button handler');
-                console.log(res);
-            }, function err (res) {
-                console.log('ERROR');
-                console.log(res);
-            });
-        }
-
         function uploadPhoto(file) {
             var req = {
                 method: 'POST',
