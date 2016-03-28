@@ -18,6 +18,7 @@
   "homepage": "https://github.com/liujuliet/camabis",
   "dependencies": {
     "angular": "^1.5.1",
+    "async": "^2.0.0-rc.2",
     "body-parser": "^1.15.0",
     "cors": "^2.7.1",
     "express": "4.13.3",
