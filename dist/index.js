@@ -30,15 +30,23 @@ router.get('/api/concerns', function(req, res) {
 });
 
 router.get('api/newestLink', function(req, res) {
+  var results = [];
   pg.connect(connectionString, function(err, client, done) {
-    client.query('SELECT image_filename FROM concerns ORDER BY date DESC limit 1;', function(err, result) {
-      if (err) console.log(err);
-      console.log(result);
+    client.query('SELECT * FROM concerns;', function(err, result) {
       done();
 
-      res.json(result);
+      res.json(result.rows);
     });
   });
+  // pg.connect(connectionString, function(err, client, done) {
+  //   client.query('SELECT image_filename FROM concerns ORDER BY date DESC limit 1;', function(err, result) {
+  //     if (err) console.log(err);
+  //     console.log(result);
+  //     done();
+
+  //     res.json(result);
+  //   });
+  // });
 });
 
 router.post('/api/photo', function(req, res) {
