@@ -44,7 +44,6 @@ router.post('/api/photo', function(req, res) {
   var url = req.body.link;
   var q = "INSERT INTO concerns (status, room_id, camera_id, disease_type, severity, image_filename) values('new', 1, 1, 1, 1, '" + url + "');";
   console.log(q);
->>>>>>> 16a14ab41754730e12a110951945f037eda19c94
   pg.connect(connectionString, function(err, client, done) {
     client.query(q, function(err, result) {
       done();

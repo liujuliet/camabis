@@ -29,6 +29,16 @@ router.get('/api/concerns', function(req, res) {
   });
 });
 
+router.get('api/newestLink', function(req, res) {
+  pg.connect(connectionString, function(err, client, done) {
+    client.query('SELECT image_filename FROM concerns ORDER BY date DESC limit 1;', function(err, result) {
+      done();
+
+      res.send(result);
+    });
+  });
+});
+
 router.post('/api/photo', function(req, res) {
   console.log(req.body.link);
   var url = req.body.link;
