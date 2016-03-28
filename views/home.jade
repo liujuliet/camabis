@@ -36,8 +36,7 @@ html
               v-pane-header
                 .concern-row
                   .concern-row-image
-                    img.hide-is-expanded(src='http://placehold.it/216x162')
-                    img.show-is-expanded(src='http://placehold.it/864x648')
+                    img(src='{{concern.image_filename}}')
                   .concern-row-group.hide-is-expanded
                     i.fa.fa-circle.severity(class='{{jmap.severity[concern.severity]}}')
                     div
