@@ -60,7 +60,7 @@ html
                         label {{ concern.date | date:"EEE, MMM d, h:mm a"}}
                       hr.hide-b-md
                     div.button-container.show-is-expanded
-                      button Resolve
-                      button.secondary Not an Issue
-                  label.hide-is-expanded.hide-b-xs {{ concern.date | date:"MMM d, h:mm a" }}
+                      button(role="resolveConcern", disabled) Resolve
+                      button.secondary(role="nonissueConcern", disabled) Not an Issue
+                  label.hide-is-expanded.hide-b-sm {{ concern.date | date:"MMM d, h:mm a" }}
               v-pane-content

@@ -9,10 +9,12 @@
 
     function HomeController($http, DatabaseFactory, $scope, $rootScope) {
         /* Element selectors and scope variables */
-        var uploadPhotoEl = document.querySelector("[name='upload-photo']");
-        var goNewEl = document.querySelector("[role='goNew']");
-        var goResolvedEl = document.querySelector("[role='goResolved']");
-        var goNonissueEl = document.querySelector("[role='goNonissue']");
+        var uploadPhotoEl = document.querySelector("[name='upload-photo']"),
+            goNewEl = document.querySelector("[role='goNew']"),
+            goResolvedEl = document.querySelector("[role='goResolved']"),
+            goNonissueEl = document.querySelector("[role='goNonissue']");
+            // resolveConcernEl = document.querySelector("[role='resolveConcern']"),
+            // nonissueConcernEl = document.querySelector("[role='nonissueConcern']");
 
         $rootScope.mobile = document.documentElement.classList.contains('mobile');
         $scope.showNav = $rootScope.mobile ? false : true;
@@ -51,6 +53,18 @@
                 makeActive(goNonissueEl);
             }
         });
+
+        // resolveConcernEl.addEventListener('click', function (e) {
+        //     if (confirm("Are you sure you want to resolve this?")) {
+        //         console.log("Resolved");
+        //     }
+        // });
+
+        // nonissueConcernEl.addEventListener('click', function (e) {
+        //     if (confirm("Are you sure this isn't an issue?")) {
+        //         console.log("Mark non-issue");
+        //     }
+        // });
 
         /* Initiate */
         makeActive(goNewEl);

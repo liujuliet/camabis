@@ -233,7 +233,7 @@
 
 i.severity {
   font-size: 1.5em;
-  margin-right: 1rem;
+  margin-right: 1.5rem;
 }
 
 .severity.low {
@@ -550,6 +550,16 @@ button.secondary {
 
 button.secondary:hover {
   background-color: #b7b7b7;
+}
+
+button[disabled] {
+  background-color: #F3F3F3;
+  color: grey;
+  cursor: not-allowed;
+}
+
+button[disabled]:hover {
+  background-color: #F3F3F3;
 }
 
 /******************************************
