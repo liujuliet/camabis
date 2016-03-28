@@ -248,6 +248,11 @@ i.severity {
   color: #E67070;
 }
 
+.concern:not(.is-expanded) .concern-row-image {
+  height: auto;
+  max-width: 216px;
+}
+
 @media only screen and (max-width: 768px) {
   .concern:not(.is-expanded) .concern-row-image {
     width: 50%;

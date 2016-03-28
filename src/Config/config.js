@@ -1,4 +1,4 @@
 angular.module('myApp.config', [])
-.constant('databaseUrl', "https://camabis.herokuapp.com");
+.constant('databaseUrl', "http://localhost:5000");
 
 
