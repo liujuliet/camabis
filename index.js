@@ -11,7 +11,7 @@ var multer = require('multer');
 var fs = require('fs');
 var storage = multer.diskStorage({
   destination: function(req, file, callback) {
-    callback(null, './uploads');
+    callback(null, './img');
   },
   filename: function(req, file, callback) {
     callback(null, 'myImage');
@@ -55,8 +55,9 @@ router.post('/api/photo', function(req, res) {
   });
 });
 
-fs.readdir(__dirname + '/uploads', function (err, data) {
-  if (err) console.log('couldnt read uploads from server ' + err);
+fs.readdir(__dirname + '/img', function (err, data) {
+  if (err) {console.log('couldnt read img folder from server ' + err); return;}
+  console.log('************* readdir ********************');
   console.log(data);
 });
 
