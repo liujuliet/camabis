@@ -32,8 +32,7 @@ router.get('/api/concerns', function(req, res) {
 app.post('/api/photo', function(req, res) {
   console.log(req);
   pg.connect(connectionString, function(err, client, done) {
-    client.query("INSERT INTO concerns (status, room_id, camera_id, disease_type,
-                  severity, image_filename) values('new', 1, 1, 1, 1, {});".format(req.body.link), function(err, result) {
+    client.query("INSERT INTO concerns (status, room_id, camera_id, disease_type, severity, image_filename) values('new', 1, 1, 1, 1, {});".format(req.body.link), function(err, result) {
       done();
 
       res.json(result.rows);
