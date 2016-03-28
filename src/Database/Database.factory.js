@@ -34,7 +34,7 @@
         url: databaseUrl + '/api/photo',
         headers: {
           'Access-Control-Allow-Origin': '*',
-          'Content-type': 'application/x-www-form-urlencoded'
+          'Content-type': 'application/json; charset=utf-8'
         },
         data: res
       }).success(function(resp) {
