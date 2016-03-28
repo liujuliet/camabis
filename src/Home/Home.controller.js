@@ -98,9 +98,8 @@
             }
 
             $http(req).then(function success (res) {
-                res.header('Access-Control-Allow-Origin', "*");
                 console.log(res.data.data.link);
-                DatabaseFactory.postPhoto(res.data.data);
+                DatabaseFactory.postPhoto(res.data.data.link, function(){});
             }, function err (res) {
                 console.log(res);
             });

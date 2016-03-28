@@ -27,10 +27,17 @@
         });
     }
 
-    function postPhoto(imgUrl) {
-      console.log(imgUrl);
-      $http.post(databaseUrl + '/api/photo', imgUrl)
-        .success(function() {
+    function postPhoto(res, callback) {
+      console.log(res);
+      $http({
+        method: 'POST',
+        url: databaseUrl + '/api/photo',
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Content-type': 'application/x-www-form-urlencoded'
+        },
+        data: res
+      }).success(function(resp) {
           console.log('Sucessfully posted photo.');
         })
         .error(function (error) {
