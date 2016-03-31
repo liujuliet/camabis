@@ -157,6 +157,7 @@
 
 .content {
   background-color: #eaeaea;
+  overflow-y: auto;
   width: 100%;
 }
 
