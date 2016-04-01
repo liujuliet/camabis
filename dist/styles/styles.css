@@ -188,6 +188,10 @@
   margin-top: 1.5em;
 }
 
+.concern:last-of-type {
+  margin-bottom: 1.5em;
+}
+
 .concern:not(.is-expanded) .show-is-expanded,
 .concern.is-expanded .hide-is-expanded {
   display: none;
@@ -250,8 +254,9 @@ i.severity {
 }
 
 .concern:not(.is-expanded) .concern-row-image {
-  height: auto;
+  max-height: 160px;
   max-width: 216px;
+  overflow-y: hidden;
 }
 
 @media only screen and (max-width: 768px) {

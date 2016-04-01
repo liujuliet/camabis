@@ -144,6 +144,10 @@
         border-top: @border;
         margin-top: 1.5em;
     }
+
+    &:last-of-type {
+        margin-bottom: 1.5em;
+    }
 }
 
 .concern:not(.is-expanded) .show-is-expanded,
@@ -209,8 +213,9 @@
 
 .concern:not(.is-expanded) {
     .concern-row-image {
-        height: auto;
+        max-height: 160px;
         max-width: 216px;
+        overflow-y: hidden;
 
         @media @mq-sm {
             width: 50%;
