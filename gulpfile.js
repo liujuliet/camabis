@@ -13,9 +13,9 @@ var paths = {
     dist: 'dist',
     img: 'src/**/*.png',
     jade: 'views/**/*.jade',
-    js: ['src/**/*.js', '!src/**/*.min.js', '!index.js', '!imageProcessing.js'],
+    js: ['src/**/*.js', '!src/**/*.min.js', '!index.js'],
     json: 'src/**/*.json',
-    lib: ['src/**/*.min.js', 'index.js', 'imageProcessing.js'],
+    lib: ['src/**/*.min.js', 'index.js'],
     less: 'src/**/*.less'
 }
 

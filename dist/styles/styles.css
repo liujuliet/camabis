@@ -157,6 +157,7 @@
 
 .content {
   background-color: #eaeaea;
+  overflow-y: auto;
   width: 100%;
 }
 
@@ -185,6 +186,10 @@
 .concern:first-of-type {
   border-top: 1px solid #D0D0D0;
   margin-top: 1.5em;
+}
+
+.concern:last-of-type {
+  margin-bottom: 1.5em;
 }
 
 .concern:not(.is-expanded) .show-is-expanded,
@@ -249,8 +254,9 @@ i.severity {
 }
 
 .concern:not(.is-expanded) .concern-row-image {
-  height: auto;
+  max-height: 160px;
   max-width: 216px;
+  overflow-y: hidden;
 }
 
 @media only screen and (max-width: 768px) {

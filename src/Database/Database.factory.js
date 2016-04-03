@@ -27,11 +27,18 @@
         });
     }
 
-    function postPhoto(file) {
-      console.log(file);
-      $http.post('https://camabis.herokuapp.com/api/photo', file)
-        .success(function() {
-          console.log("Successfully posted")
+    function postPhoto(res, callback) {
+      console.log(res);
+      $http({
+        method: 'POST',
+        url: databaseUrl + '/api/photo',
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Content-type': 'application/json; charset=utf-8'
+        },
+        data: res
+      }).success(function(resp) {
+          console.log('Sucessfully posted photo.');
         })
         .error(function (error) {
           console.log("Didn't post photo properly" + error);

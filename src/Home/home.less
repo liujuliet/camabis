@@ -117,6 +117,7 @@
 
 .content {
     background-color: lighten(@color2, 10%);
+    overflow-y: auto;
     width: 100%;
 
     @media @mq-sm {
@@ -142,6 +143,10 @@
     &:first-of-type {
         border-top: @border;
         margin-top: 1.5em;
+    }
+
+    &:last-of-type {
+        margin-bottom: 1.5em;
     }
 }
 
@@ -208,8 +213,9 @@
 
 .concern:not(.is-expanded) {
     .concern-row-image {
-        height: auto;
+        max-height: 160px;
         max-width: 216px;
+        overflow-y: hidden;
 
         @media @mq-sm {
             width: 50%;
