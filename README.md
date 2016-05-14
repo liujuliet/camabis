@@ -5,3 +5,6 @@ Check it out [live](http://camabis.herokuapp.com)!
 
 ## Local Development
 Run `npm install` to install local dependencies. Run `gulp` to dev locally and `gulp build` to built the dist folder.
+
+## Deploying
+Run `git push heroku master` to deploy to Heroku.
