@@ -9,7 +9,8 @@
 
     function HomeController($http, DatabaseFactory, $scope, $rootScope) {
         /* Element selectors and scope variables */
-        var uploadPhotoEl = document.querySelector("[name='upload-photo']"),
+        var uploadPhotoInputEl = document.querySelector("[role='inputPhoto']"),
+            uploadPhotoEl = document.querySelector("[name='upload-photo']"),
             goNewEl = document.querySelector("[role='goNew']"),
             goResolvedEl = document.querySelector("[role='goResolved']"),
             goNonissueEl = document.querySelector("[role='goNonissue']");
@@ -21,6 +22,13 @@
         $scope.status = 'new';
 
         /* Event Listeners */
+        uploadPhotoInputEl.addEventListener('click', function(e) {
+            if (prompt("Enter password") != "camabis1234") {
+                e.preventDefault();
+                alert("Incorrect password");
+            }
+        });
+
         uploadPhotoEl.addEventListener('change', function (e) {
             e.preventDefault();
             var files = e.target.files;
@@ -98,8 +106,6 @@
             }
 
             $http(req).then(function success (res) {
-                console.log(res.data.data.link);
-                console.log(res.data.data);
                 DatabaseFactory.postPhoto(res.data.data, function(){});
             }, function err (res) {
                 console.log(res);
